@@ -20,7 +20,7 @@ CREATE TABLE Cliente (
 
 #### Inserção de dados na tabela Cliente
 
-```c
+```sql
 INSERT INTO Cliente (nome, data_nascimento, cidade_id)
 VALUES ('João', '1990-01-01', 1);
 ```
@@ -29,7 +29,7 @@ VALUES ('João', '1990-01-01', 1);
 
 #### Comando para excluir um cliente
 
-```c
+```sql
 -- 1. Excluir vendas associadas ao cliente
 DELETE FROM Vendas
 WHERE cliente_id = (SELECT id FROM Clientes WHERE nome = 'Victor');
@@ -52,7 +52,7 @@ WHERE EXTRACT(YEAR FROM v.data_compra) = 2023;
 
 #### Retorna o valor total de vendas agrupados por ano e mês.
 
-```c
+```sql
 SELECT
     EXTRACT(YEAR FROM Venda.data) AS ano,
     EXTRACT(MONTH FROM Venda.data) AS mes,
