@@ -26,7 +26,7 @@ VALUES ('João', '1990-01-01', 1);
 
 ## Exemplos de Consultas
 
-#### Retornar o nome do cliente, o identificador da venda, a data da compra, e o valor total de cada venda no ano de 2023.
+#### Retorna o nome do cliente, o identificador da venda, a data da compra, e o valor total de cada venda no ano de 2023.
 
 ```sql
 SELECT c.nome AS cliente, v.id AS venda, v.data_compra AS data_compra, v.valor_total AS valor_total
@@ -34,3 +34,17 @@ FROM clientes c
 JOIN vendas v ON c.id = v.cliente_id
 WHERE EXTRACT(YEAR FROM v.data_compra) = 2023;
 ```
+
+#### Retorna o valor total de vendas agrupados por ano e mês.
+
+```c
+SELECT
+    EXTRACT(YEAR FROM Venda.data) AS ano,
+    EXTRACT(MONTH FROM Venda.data) AS mes,
+    SUM(VendaProdutoAgricultor.valor) AS valorTotalVendas
+FROM Venda
+JOIN VendaProdutoAgricultor ON Venda.idVenda = VendaProdutoAgricultor.idVenda
+GROUP BY ano, mes
+ORDER BY ano, mes;
+```
+``
