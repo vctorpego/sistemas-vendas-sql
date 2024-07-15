@@ -27,14 +27,14 @@ VALUES ('João', '1990-01-01', 1);
 
 ### Deleção de Dados
 
-#### Comando para excluir um agricultor
+#### Comando para excluir um cliente
 
 ```c
--- Excluir vendas associadas ao cliente
+-- 1. Excluir vendas associadas ao cliente
 DELETE FROM Vendas
 WHERE cliente_id = (SELECT id FROM Clientes WHERE nome = 'Victor');
 
--- Excluir o cliente
+-- 2. Excluir o cliente
 DELETE FROM Clientes
 WHERE nome = 'Victor';
 ```
