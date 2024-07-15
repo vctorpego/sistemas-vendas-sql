@@ -47,4 +47,3 @@ JOIN VendaProdutoAgricultor ON Venda.idVenda = VendaProdutoAgricultor.idVenda
 GROUP BY ano, mes
 ORDER BY ano, mes;
 ```
-``
