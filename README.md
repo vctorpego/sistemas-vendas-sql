@@ -4,6 +4,8 @@ Este projeto foi desenvolvido como parte da disciplina de Banco de Dados. O sist
 
 ## Estrutura do Banco de Dados
 
+### Criação de Tabela
+
 #### Criação da tabela Cliente
 
 ```sql
@@ -14,14 +16,27 @@ CREATE TABLE Cliente (
     cidade_id INT REFERENCES Cidade(id)
 );
 ```
-
-## Inserção de Dados
+### Inserção de Dados
 
 #### Inserção de dados na tabela Cliente
 
 ```c
 INSERT INTO Cliente (nome, data_nascimento, cidade_id)
 VALUES ('João', '1990-01-01', 1);
+```
+
+### Deleção de Dados
+
+#### Comando para excluir um agricultor
+
+```c
+-- Excluir vendas associadas ao cliente
+DELETE FROM Vendas
+WHERE cliente_id = (SELECT id FROM Clientes WHERE nome = 'Victor');
+
+-- Excluir o cliente
+DELETE FROM Clientes
+WHERE nome = 'Victor';
 ```
 
 ## Exemplos de Consultas
