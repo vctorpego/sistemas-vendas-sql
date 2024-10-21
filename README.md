@@ -25,7 +25,7 @@ INSERT INTO Cliente (nome, data_nascimento, cidade_id)
 VALUES ('João', '1990-01-01', 1);
 ```
 
-### Deleção de Dados
+### Exclusão de Dados
 
 #### Comando para excluir um cliente
 
